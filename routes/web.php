@@ -13,7 +13,10 @@ use App\Http\Controllers\ProjectClientController;
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
+// Route::middleware(['auth'])->group(function () {
+    
 Route::get('/', [FrontController::class, 'index'])->name('front.index');
+// });
 
 
 // Route::get('/', function () {
