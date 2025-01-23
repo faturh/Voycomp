@@ -12,7 +12,8 @@ class CompanyKeypointController extends Controller
      */
     public function index()
     {
-        //
+        $keypoints = CompanyKeypoint::orderByDesc('id')->paginate(10);
+        return view('admin.keypoints.index', compact('keypoints')); 
     }
 
     /**

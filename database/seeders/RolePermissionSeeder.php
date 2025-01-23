@@ -36,6 +36,7 @@ class RolePermissionSeeder extends Seeder
         $designManagerRole = Role::firstOrCreate(['name' => 'Designer_Manager']);
 
         $designManagerPermissions = [
+            'manage statistics',
             'manage products',
             'manage principles',
             'manage testimonials'
@@ -46,7 +47,8 @@ class RolePermissionSeeder extends Seeder
 
         // role super admin
         $superAdminRole = Role::firstOrCreate(['name' => 'super-admin']);
-
+        $superAdminRole->syncPermissions($permissions);
+        
         $user = User::create([
             'name' => 'Voycomp',
             'email' => 'superadmin@gmail.com',

@@ -13,7 +13,8 @@ class CompanyStatisticController extends Controller
     public function index()
     {
         //
-        return('halaman index tampilkan data statistics CMS');
+        $statistics = CompanyStatistic::orderByDesc('id')->paginate(10);
+        return view('admin.statistics.index', compact('statistics'));
     }
 
     /**
