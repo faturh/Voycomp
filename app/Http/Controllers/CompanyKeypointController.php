@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CompanyKeypoint;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CompanyKeypointController extends Controller
 {
@@ -31,6 +32,19 @@ class CompanyKeypointController extends Controller
     public function store(Request $request)
     {
         //
+        DB::transaction(function() use ($request) {
+            $validated=$request->validated();
+
+            if($request->hasFile('icon')){
+                $iconPath=$request->file('icon')->store('icons', 'public');
+                $validated['icon']=$iconPath;
+            }
+
+            $newCompanyKeypoint = CompanyKeypoint::create($validated);
+
+        });
+        
+        return redirect()->route('admin.keypoints.index');
     }
 
     /**

@@ -13,13 +13,13 @@
                     <div>
                         <x-input-label for="name" :value="__('Name')" />
                         <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" 
-                          required autofocus autocomplete="name" />
+                          value="{{$about->name}}" required autofocus autocomplete="name" />
                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
                     </div>
 
                     <div class="mt-4">
                         <x-input-label for="thumbnail" :value="__('thumbnail')" />
-                        <img src=" " alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
+                        <img src="{{Storage::url($about->thumbnail)}}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
                         <x-text-input id="thumbnail" class="block mt-1 w-full" type="file" name="thumbnail" autofocus autocomplete="thumbnail" />
                         <x-input-error :messages="$errors->get('thumbnail')" class="mt-2" />
                     </div>
@@ -41,7 +41,10 @@
                         
                         <div class="flex flex-col gap-y-5">
                             <x-input-label for="keypoints" :value="__('keypoints')" /> 
-                                <input type="text" class="py-3 rounded-lg border-slate-300 border" value="asdsadsadsad" name="keypoints[]">
+                            @forelse($about->keypoints as $keypoint)
+                                <input type="text" class="py-3 rounded-lg border-slate-300 border" value="{{$keypoint->keypoint}}" name="keypoints[]">
+                                @empty
+                                @endforelse
                              
                         </div>
                         <x-input-error :messages="$errors->get('keypoint')" class="mt-2" />

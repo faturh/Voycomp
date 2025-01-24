@@ -47,7 +47,7 @@ class CompanyStatisticController extends Controller
 
         });
         
-        return redirect()->route('statistics.index');
+        return redirect()->route('admin.statistics.index');
     }
 
     /**
