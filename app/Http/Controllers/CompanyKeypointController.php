@@ -77,5 +77,10 @@ class CompanyKeypointController extends Controller
     public function destroy(CompanyKeypoint $companyKeypoint)
     {
         //
+        DB::transaction(function () use ($companyKeypoint) {
+            $companyKeypoint->delete();
+        });
+    
+        return redirect()->route('admin.keypoints.index');
     }
 }

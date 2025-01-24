@@ -74,8 +74,13 @@ class OurTeamController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(OurTeam $ourTeam)
+    public function destroy(OurTeam $team)
     {
         //
+        DB::transaction(function () use ($team) {
+            $team->delete();
+        });
+    
+        return redirect()->route('admin.teams.index');
     }
 }
