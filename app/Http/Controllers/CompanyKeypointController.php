@@ -22,6 +22,7 @@ class CompanyKeypointController extends Controller
     public function create()
     {
         //
+        return view('admin.keypoints.create');
     }
 
     /**

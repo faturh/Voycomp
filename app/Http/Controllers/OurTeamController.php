@@ -21,6 +21,7 @@ class OurTeamController extends Controller
     public function create()
     {
         //
+        return view('admin.teams.create');
     }
 
     /**
