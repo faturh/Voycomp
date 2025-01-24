@@ -8,8 +8,16 @@
     <div class="py-12">
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden p-10 shadow-sm sm:rounded-lg"> 
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div class="py-3 w-full rounded-3xl bg-red-500 text-white">
+                            {{ $error }}
+                        </div>
+                    @endforeach
+                @endif
                 
-                <form method="POST" action=" " enctype="multipart/form-data"> 
+                <form method="POST" action="{{route('admin.hero_sections.store')}}" enctype="multipart/form-data"> 
+                    @csrf
                     <div>
                         <x-input-label for="heading" :value="__('heading')" />
                         <x-text-input id="heading" class="block mt-1 w-full" type="text" name="heading" :value="old('heading')" required autofocus autocomplete="heading" />
