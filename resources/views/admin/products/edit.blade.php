@@ -8,9 +8,16 @@
     <div class="py-12">
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden p-10 shadow-sm sm:rounded-lg"> 
-                
-                <form method="POST" action="route('admin.products.edit', $product)" enctype="multipart/form-data"> 
-                    
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div class="py-3 w-full rounded-3xl bg-red-500 text-white">
+                            {{ $error }}
+                        </div>
+                    @endforeach
+                @endif
+                <form method="POST" action="{{route('admin.products.update', $product)}}" enctype="multipart/form-data"> 
+                    @csrf
+                    @method('PUT')
                     <div>
                         <x-input-label for="name" :value="__('Name')" />
                         <x-text-input id="name" class="block mt-1 w-full" type="text" name="name"
@@ -34,7 +41,7 @@
 
                     <div class="mt-4">
                         <x-input-label for="about" :value="__('about')" />
-                        <textarea name="about" id="about" cols="30" rows="5" class="border border-slate-300 rounded-xl w-full"> </textarea>
+                        <textarea name="about" id="about" cols="30" rows="5" class="border border-slate-300 rounded-xl w-full">{{$product->about}}</textarea>
                         <x-input-error :messages="$errors->get('about')" class="mt-2" />
                     </div>
 

@@ -8,8 +8,16 @@
     <div class="py-12">
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden p-10 shadow-sm sm:rounded-lg"> 
-                
-                <form method="POST" action="oute('admin.clients.edit', $client)" enctype="multipart/form-data"> 
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div class="py-3 w-full rounded-3xl bg-red-500 text-white">
+                            {{ $error }}
+                        </div>
+                    @endforeach
+                @endif
+                <form method="POST" action="{{route('admin.clients.update', $client)}}" enctype="multipart/form-data"> 
+                    @csrf
+                    @method('PUT')
                     <div>
                         <x-input-label for="name" :value="__('Name')" />
                         <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" 
