@@ -70,6 +70,8 @@ class CompanyAboutController extends Controller
     public function edit(CompanyAbout $companyAbout)
     {
         //
+        return view('admin.company_abouts.edit', compact('about'));
+
     }
 
     /**

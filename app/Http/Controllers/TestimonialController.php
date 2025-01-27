@@ -65,6 +65,9 @@ class TestimonialController extends Controller
     public function edit(Testimonial $testimonial)
     {
         //
+        // Menampilkan form untuk mengedit testimonial yang dipilih
+        $clients = ProjectClient::all(); // Menyediakan data client untuk pilihan
+        return view('admin.testimonials.edit', compact('testimonial', 'clients'));
     }
 
     /**

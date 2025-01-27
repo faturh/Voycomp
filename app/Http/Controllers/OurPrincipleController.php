@@ -66,6 +66,8 @@ class OurPrincipleController extends Controller
     public function edit(OurPrinciple $ourPrinciple)
     {
         //
+        return view('admin.our_principles.edit', compact('principle'));
+
     }
 
     /**
