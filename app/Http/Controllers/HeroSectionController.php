@@ -51,7 +51,7 @@ class HeroSectionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(HeroSection $heroSection)
+    public function show(HeroSection $hero_section)
     {
         //
     }
@@ -59,7 +59,7 @@ class HeroSectionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(HeroSection $heroSection)
+    public function edit(HeroSection $hero_section)
     {
         //
         return view('admin.hero_sections.edit', compact('hero_section'));
@@ -69,7 +69,7 @@ class HeroSectionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, HeroSection $heroSection)
+    public function update(Request $request, HeroSection $hero_section)
     {
         //
     }

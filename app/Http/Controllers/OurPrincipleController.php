@@ -55,7 +55,7 @@ class OurPrincipleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(OurPrinciple $ourPrinciple)
+    public function show(OurPrinciple $principle)
     {
         //
     }
@@ -63,7 +63,7 @@ class OurPrincipleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(OurPrinciple $ourPrinciple)
+    public function edit(OurPrinciple $principle)
     {
         //
         return view('admin.our_principles.edit', compact('principle'));
@@ -73,7 +73,7 @@ class OurPrincipleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, OurPrinciple $ourPrinciple)
+    public function update(Request $request, OurPrinciple $principle)
     {
         //
     }
