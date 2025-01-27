@@ -28,7 +28,7 @@
                     <div  class="hidden md:flex flex-col">
                         <p class="text-slate-500 text-sm">Date</p>
                         <h3 class="text-indigo-950 text-xl font-bold">
-                            {{@hero_section->created_at->format('M d, Y')}}
+                            {{$hero_section->created_at}}
                         </h3>
                     </div>
                     <div class="hidden md:flex flex-row items-center gap-x-3">

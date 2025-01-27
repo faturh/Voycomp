@@ -22,8 +22,8 @@ class StoreHeroSectionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
-            'achievment' => 'required|string|max:255',
+            'heading' => 'required|string|max:255',
+            'achievement' => 'required|string|max:255',
             'subheading' => 'required|string|max:255',
             'path_video' => 'required|string|max:255',
             'banner' => ['required', 'image', 'mimes:png,jpg,jpeg'],

@@ -20,7 +20,7 @@
                         <img src="{{Storage::url($testimonial->thumbnail)}}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
                         <div class="flex flex-col">
                             <h3 class="text-indigo-950 text-xl font-bold">
-                                {{$testimonial->client->name}}
+                                {{$testimonial->projectClient->name}}
                             </h3>
                         </div>
                     </div> 

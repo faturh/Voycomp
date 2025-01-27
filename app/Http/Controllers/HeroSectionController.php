@@ -24,6 +24,7 @@ class HeroSectionController extends Controller
     public function create()
     {
         //
+        return view('admin.hero_sections.create');
     }
 
     /**
@@ -74,11 +75,11 @@ class HeroSectionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(HeroSection $hero_sections)
+    public function destroy(HeroSection $hero_section)
     {
         //
-        DB::transaction(function () use ($hero_sections) {
-            $hero_sections->delete();
+        DB::transaction(function () use ($hero_section) {
+            $hero_section->delete();
         });
     
         return redirect()->route('admin.hero_sections.index');

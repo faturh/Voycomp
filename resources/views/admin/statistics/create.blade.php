@@ -25,13 +25,13 @@
                     </div>
 
                     <div class="mt-4">
-                        <x-input-label for="icon" :value="__('icon')" />
+                        <x-input-label for="icon" :value="__('Icon')" />
                         <x-text-input id="icon" class="block mt-1 w-full" type="file" name="icon" required autofocus autocomplete="icon" />
                         <x-input-error :messages="$errors->get('icon')" class="mt-2" />
                     </div>
 
                     <div class="mt-4">
-                        <x-input-label for="goal" :value="__('goal')" />
+                        <x-input-label for="goal" :value="__('Goal')" />
                         <x-text-input id="goal" class="block mt-1 w-full" type="text" name="goal" :value="old('goal')" required autofocus autocomplete="goal" />
                         <x-input-error :messages="$errors->get('goal')" class="mt-2" />
                     </div>

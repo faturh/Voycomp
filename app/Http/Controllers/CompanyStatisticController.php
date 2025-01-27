@@ -34,6 +34,7 @@ class CompanyStatisticController extends Controller
      */
     public function store (StoreStatisticRequest $request)
     {
+        // dd($request->all()); // Memastikan data yang diterima sudah benar
         // insert kepada database bakalan disini
         DB::transaction(function() use ($request) {
             $validated=$request->validated();
