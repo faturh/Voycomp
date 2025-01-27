@@ -61,7 +61,7 @@ class OurTeamController extends Controller
     public function edit(OurTeam $team)
     {
         //
-        return view('admin.our_teams.edit', compact('team'));
+        return view('admin.teams.edit', compact('team'));
 
     }
 

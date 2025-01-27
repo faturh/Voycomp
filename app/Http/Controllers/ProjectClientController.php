@@ -66,7 +66,7 @@ class ProjectClientController extends Controller
     public function edit(ProjectClient $client)
     {
         //
-        return view('admin.project_clients.edit', compact('client'));
+        return view('admin.clients.edit', compact('client'));
 
     }
 

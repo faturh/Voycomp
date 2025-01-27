@@ -67,10 +67,10 @@ class CompanyAboutController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CompanyAbout $aAbout)
+    public function edit(CompanyAbout $about)
     {
         //
-        return view('admin.company_abouts.edit', compact('about'));
+        return view('admin.abouts.edit', compact('about'));
 
     }
 
