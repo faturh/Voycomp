@@ -16,6 +16,7 @@
                         </div>
                     @endforeach
                 @endif
+                
                 <form method="POST" action="{{route('admin.statistics.store')}}" enctype="multipart/form-data"> 
                     @csrf
                     <div>
