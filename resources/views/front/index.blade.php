@@ -32,7 +32,11 @@
             </ul>
             <a href="" class="bg-cp-dark-blue p-[14px_20px] w-fit rounded-xl hover:shadow-[0_12px_30px_0_#312ECB66] transition-all duration-300 font-bold text-white">Get a Quote</a>
         </nav>
+
         @forelse($hero_section as $hero)
+        <input type="hidden" name="path_video" id="path_video" value="{{$hero->path_video}}">
+
+
         <div id="Hero" class="flex flex-col gap-[30px] mt-20 pb-20">
           <div class="flex items-center bg-white p-[8px_16px] gap-[10px] rounded-full w-fit">
             <div class="w-5 h-5 flex shrink-0 overflow-hidden">
