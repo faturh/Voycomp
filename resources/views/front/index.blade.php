@@ -1,4 +1,7 @@
+<!-- Mengindikasikan bahwa file Blade ini (misalnya, index.blade.php) menggunakan kerangka/master layout dari file front/layouts/app.blade.php. -->
 @extends ('front.layouts.app')
+
+<!-- Menyisipkan konten spesifik ke dalam bagian yang ditentukan oleh @yield('content') di master layout -->
 @section('content')
 
   <div id="header" class="bg-[#F6F7FA] relative overflow-hidden">
@@ -446,9 +449,10 @@
       @empty
       <p>Belum ada data terbaru</p>
       @endforelse
-      
+
     </div>
   </div>
+  
   <div id="Awards" class="container max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-20">
     <div class="flex items-center justify-between">
       <div class="flex flex-col gap-[14px]">

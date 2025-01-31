@@ -27,7 +27,7 @@ class TestimonialController extends Controller
     public function create()
     {
         //
-        $clients = ProjectClient::orderByDesc('id')->get();
+        $clients = ProjectClient::orderByDesc('id')->paginate(10);
         return view('admin.testimonials.create', compact('clients'));
     }
 

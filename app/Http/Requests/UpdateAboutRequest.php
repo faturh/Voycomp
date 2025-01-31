@@ -24,7 +24,7 @@ class UpdateAboutRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'type' => 'required|string|max:255',
-            'thumbnail' => ['required', 'image', 'mimes:png,jpg,jpeg'],
+            'thumbnail' => ['sometimes', 'image', 'mimes:png,jpg,jpeg'],
             'keypoints.*' => 'required|string|max:255',
             //
         ];

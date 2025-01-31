@@ -17,8 +17,8 @@ class ProjectClient extends Model
         'logo',
     ];
 
-    public function testimonials()
-    {
-        return $this->hasMany(Testimonial::class);
-    }
+    // public function testimonials()
+    // {
+    //     return $this->hasMany(Testimonial::class, 'project_client_id');
+    // }
 }
