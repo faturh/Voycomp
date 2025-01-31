@@ -1,13 +1,7 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-</head>
-<body class="font-poppins text-cp-black">
-  <div id="header" class="bg-[#F6F7FA] relative h-[600px] -mb-[388px]">
+@extends('front.layouts.app')
+@section('content')
+
+<div id="header" class="bg-[#F6F7FA] relative h-[600px] -mb-[388px]">
     <div class="container max-w-[1130px] mx-auto relative pt-10 z-10">
         <nav class="flex flex-wrap items-center justify-between bg-white p-[20px_30px] rounded-[20px] gap-y-3">
             <div class="flex items-center gap-3">
@@ -402,5 +396,5 @@
       <p class="font-extrabold text-[250px] leading-[375px] text-center text-white opacity-5">SHAYNA</p>
     </div>
   </footer>
-</body>
-</html>
+
+@endsection
