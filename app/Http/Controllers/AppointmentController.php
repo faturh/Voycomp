@@ -32,21 +32,7 @@ class AppointmentController extends Controller
      */
     public function store(StoreAppointmentRequest $request)
     {
-        DB::transaction(function() use ($request) {
-            $validated=$request->validated();
-
-            if($request->hasFile('icon')){
-                $iconPath=$request->file('icon')->store('icons', 'public');
-                $validated['icon']=$iconPath;
-            }
-
-            $newAppointment = Appointment::create($validated);
-
-        });
-        
-        return redirect()->route('admin.appointments.index');
-    
-        
+        //   
     }
 
     /**

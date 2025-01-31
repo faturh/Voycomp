@@ -6,70 +6,74 @@
             </h2>
         </div>
     </x-slot>
-    
+
     <div class="py-12">
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-10 flex flex-col gap-y-5">
 
-                <div class="item-card flex flex-row justify-between items-center">
-                    <div class="flex flex-row items-center gap-x-3">
-                        <img src=" " alt="" class="rounded-2xl object-cover w-[120px] h-[90px]">
-                        <div class="flex flex-col">
-                            <p class="text-slate-500 text-sm">Product Interest</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">asdasdadad</h3>
-                        </div>
-                    </div>  
-                </div>
-
-                <hr class="my-5">
-
-                <div class="grid grid-cols-2 gap-5">
-                    <div class="flex flex-col gap-y-4">
-                        <div class="flex flex-col">
-                            <p class="text-slate-500 text-sm">Name</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">
-                                asdsadad
-                            </h3>
-                        </div>
-        
-                        <div class="flex flex-col">
-                            <p class="text-slate-500 text-sm">Email</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">
-                                asdasdsadsadsd
-                            </h3>
-                        </div>
-        
-                        <div class="flex flex-col">
-                            <p class="text-slate-500 text-sm">Phone</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">
-                                +12312334534
-                            </h3>
+                @forelse ($appointments as $appointment)
+                    <div class="item-card flex flex-row justify-between items-center">
+                        <div class="flex flex-row items-center gap-x-3">
+                            <img src="{{ Storage::url($appointment->product->thumbnail) }}" alt="" class="rounded-2xl object-cover w-[120px] h-[90px]">
+                            <div class="flex flex-col">
+                                <p class="text-slate-500 text-sm">Product Interest</p>
+                                <h3 class="text-indigo-950 text-xl font-bold">{{ $appointment->product->name }}</h3>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex flex-col gap-y-4">
-                        <div class="flex flex-col">
-                            <p class="text-slate-500 text-sm">Brief</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">
-                                asdasd qweqwewqe
-                            </h3>
-                        </div>
-        
-                        <div class="flex flex-col">
-                            <p class="text-slate-500 text-sm">Budget</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">
-                                Rp 0
-                            </h3>
-                        </div>
-        
-                        <div class="flex flex-col">
-                            <p class="text-slate-500 text-sm">Meeting Date At</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">
-                                asdsadasdasds
-                            </h3>
-                        </div>
 
+                    <hr class="my-5">
+
+                    <div class="grid grid-cols-2 gap-5">
+                        <div class="flex flex-col gap-y-4">
+                            <div class="flex flex-col">
+                                <p class="text-slate-500 text-sm">Name</p>
+                                <h3 class="text-indigo-950 text-xl font-bold">
+                                    {{ $appointment->name }}
+                                </h3>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <p class="text-slate-500 text-sm">Email</p>
+                                <h3 class="text-indigo-950 text-xl font-bold">
+                                    {{ $appointment->email }}
+                                </h3>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <p class="text-slate-500 text-sm">Phone</p>
+                                <h3 class="text-indigo-950 text-xl font-bold">
+                                    +{{ $appointment->phone_number }}
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-y-4">
+                            <div class="flex flex-col">
+                                <p class="text-slate-500 text-sm">Brief</p>
+                                <h3 class="text-indigo-950 text-xl font-bold">
+                                    {{ $appointment->brief }}
+                                </h3>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <p class="text-slate-500 text-sm">Budget</p>
+                                <h3 class="text-indigo-950 text-xl font-bold">
+                                    $ {{ number_format($appointment->budget, 0, ',', '.') }}
+                                </h3>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <p class="text-slate-500 text-sm">Meeting Date At</p>
+                                <h3 class="text-indigo-950 text-xl font-bold">
+                                    {{ $appointment->meeting_at }}
+                                </h3>
+                            </div>
+
+                        </div>
                     </div>
-                </div>
+                @empty
+                    <p>Belum ada data</p>
+                @endforelse
 
                 <hr class="my-5">
 

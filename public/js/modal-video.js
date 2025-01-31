@@ -11,7 +11,7 @@ const options = {
         videoFrame.removeAttribute('src'); 
     },
     onShow: () => {
-        videoFrame.src = 'https://www.youtube.com/embed/' + pathVideo ;
+        videoFrame.src = 'https://www.youtube.com/embed/' + pathVideo + '?autoplay=1&mute=1';
     },
 };
 

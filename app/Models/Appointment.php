@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Appointment extends Model
@@ -13,8 +14,8 @@ class Appointment extends Model
     protected $fillable = [
         'name',
         'email',
-        'phoneNumber',
-        'meeting-at',
+        'phone_number',
+        'meeting_at',
         'budget',
         'brief',
         'product_id',
@@ -24,7 +25,7 @@ class Appointment extends Model
         'meeting_at'=> 'date', // format method..
     ];
 
-    public function product()
+    public function product() : BelongsTo
     {
         return $this->belongsTo(Product::class, 'product_id');
     }
