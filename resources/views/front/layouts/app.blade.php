@@ -16,10 +16,10 @@
 
           @yield('content')
 
-          // untuk js semua hal
+          <!-- // untuk js semua hal -->
           @stack('before-scripts')
 
-          //
+          <!-- // -->
           @stack('after-scripts')
 
 
