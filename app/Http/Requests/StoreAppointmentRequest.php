@@ -24,7 +24,7 @@ class StoreAppointmentRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'meeting_at' => 'required|date',
-            'phonenumber' => 'required|string|max:255',
+            'phone_number' => 'required|string|max:255',
             'email' => 'required|string|max:255',
             'product_id' => 'required|integer',
             'budget' => 'required|integer',

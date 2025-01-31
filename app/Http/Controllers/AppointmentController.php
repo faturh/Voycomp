@@ -14,7 +14,7 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        $appointments = Appointment::orderByDesc('id')->paginate(10);
+        $appointments = Appointment::orderByDesc('id')->paginate(3);
         return view('admin.appointments.index', compact('appointments'));
     }
 
@@ -41,6 +41,7 @@ class AppointmentController extends Controller
     public function show(Appointment $appointment)
     {
         //
+        return view('admin.appointments.details', compact('appointment'));
     }
 
     /**
@@ -49,7 +50,7 @@ class AppointmentController extends Controller
     public function edit(Appointment $appointment)
     {
         //
-            return view('admin.appointments.edit', compact('appointment'));
+            // return view('admin.appointments.edit', compact('appointment'));
 
     }
 

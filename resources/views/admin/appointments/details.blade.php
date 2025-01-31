@@ -11,7 +11,6 @@
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-10 flex flex-col gap-y-5">
 
-                @forelse ($appointments as $appointment)
                     <div class="item-card flex flex-row justify-between items-center">
                         <div class="flex flex-row items-center gap-x-3">
                             <img src="{{ Storage::url($appointment->product->thumbnail) }}" alt="" class="rounded-2xl object-cover w-[120px] h-[90px]">
@@ -71,9 +70,7 @@
 
                         </div>
                     </div>
-                @empty
-                    <p>Belum ada data</p>
-                @endforelse
+                
 
                 <hr class="my-5">
 
