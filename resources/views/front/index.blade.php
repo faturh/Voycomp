@@ -37,7 +37,7 @@
     <div class="absolute w-[43%] h-full top-0 right-0 overflow-hidden z-0">
         <img src="{{Storage::url($hero->banner)}}" class="object-cover w-full h-full" alt="banner">
     </div>
-    @empty
+    @empty 
     <p>Belum ada data terbaru</p>
     @endforelse
   </div>
